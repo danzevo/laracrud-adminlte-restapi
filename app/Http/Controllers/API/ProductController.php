@@ -15,7 +15,6 @@ class ProductController extends Controller
 {
     public function getData() {
         try {
-            dd(auth()->user()->id);
             $data = Product::with(['category'])->latest()->
                     where('user_id', auth()->user()->id)->latest()->get();
 
